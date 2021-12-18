@@ -1,9 +1,12 @@
 <template>
     <section class="container pt-5">
-        <div class="row">
+        <div v-if="albums != null" class="row">
             <div v-for="album in albums" :key="album.id">
                 <AlbumCard :info="album" />
             </div>
+        </div>
+        <div v-else class="loader">
+            Loading...
         </div>
     </section>
 </template>

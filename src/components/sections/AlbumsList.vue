@@ -1,7 +1,12 @@
 <template>
     <section class="container pt-5">
+        <div class="row">
+            <div class="col">
+                <SearchBar @search="searchAlbum" @reset="resetAlbum"/>
+            </div>
+        </div>
         <div v-if="albums != null" class="row">
-            <div v-for="album in albums" :key="album.id">
+            <div v-for="album in albumsFiltered" :key="album.id">
                 <AlbumCard :info="album" />
             </div>
         </div>
@@ -14,15 +19,18 @@
 <script>
 import axios from 'axios';
 import AlbumCard from '../commons/AlbumCard.vue';
+import SearchBar from '../commons/SearchBar.vue';
 
 export default {
     name: 'AlbumsList',
     components: {
-        AlbumCard
+        AlbumCard,
+        SearchBar
     },
     data() {
         return {
-            albums: null
+            albums: null,
+            searchText: ""
         }
     },
     created() {
@@ -35,6 +43,21 @@ export default {
             // handle error
             console.log(error);
         });
+    },
+    methods: {
+        searchAlbum(payload) {
+            this.searchText = payload;
+        },
+        resetAlbum() {
+            this.searchText = "";
+        }
+    },
+    computed: {
+        albumsFiltered() {
+            return this.albums.filter((elm) => {
+                return elm.title.toLowerCase().includes(this.searchText.toLowerCase());
+            });
+        }
     }
 }
 </script>

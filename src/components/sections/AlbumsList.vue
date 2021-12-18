@@ -21,6 +21,7 @@ import axios from 'axios';
 import AlbumCard from '../commons/AlbumCard.vue';
 import SearchBar from '../commons/SearchBar.vue';
 
+
 export default {
     name: 'AlbumsList',
     components: {
@@ -30,7 +31,7 @@ export default {
     data() {
         return {
             albums: null,
-            searchText: ""
+            searchText: "",
         }
     },
     created() {
@@ -55,7 +56,12 @@ export default {
     computed: {
         albumsFiltered() {
             return this.albums.filter((elm) => {
-                return elm.title.toLowerCase().includes(this.searchText.toLowerCase());
+                if(elm.title.toLowerCase().includes(this.searchText.toLowerCase())) {
+                    return elm;
+                } 
+                if(elm.genre == this.searchText) {
+                    return elm;
+                } 
             });
         }
     }

@@ -26,7 +26,7 @@
             <option value="Sting">Sting</option>
             <option value="Queen">Queen</option>
             <option value="Steve Gadd Band">Steve Gadd Band</option>
-            <option value="Metal">Iron Maiden</option>
+            <option value="Iron Maiden">Iron Maiden</option>
             <option value="Eric Clapton">Eric Clapton</option>
             <option value="Deep Purple">Deep Purple</option>
             <option value="Metallica">Metallica</option>

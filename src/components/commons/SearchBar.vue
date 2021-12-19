@@ -1,11 +1,15 @@
 <template>
     <div class="search">
+        
+        <!-- ricerca album per titolo -->
         <form class="d-flex mb-2" action=""> 
             <input v-model="searchText" class="form-control" type="text" placeholder="Search album">
             <button class="btn lime ms-3" @click.prevent= "$emit('search', searchText)" >Search</button>
             <button class="btn btn-warning ms-2" @click.prevent= "$emit('reset', searchText) , authorValue = '', genreValue = '' " >Reset</button>
         </form>
+        <!-- /ricerca album per titolo -->
 
+        <!-- ricerca album per genere -->
         <select v-model= "genreValue" class="mb-4 me-2" @change= "$emit ('search', genreValue)">
             <option value="">Select genre</option>
             <option value="Rock">Rock</option>
@@ -13,6 +17,9 @@
             <option value="Jazz">Jazz</option>
             <option value="Metal">Metal</option>
         </select>
+        <!-- /ricerca album per genere -->
+
+        <!-- ricerca album per artista -->
         <select v-model= "authorValue" class="mb-4" @change= "$emit ('search', authorValue)">
             <option value="">Select artist</option>
             <option value="Bon Jovi">Bon Jovi</option>
@@ -26,6 +33,8 @@
             <option value="Dave Weckl">Dave Weckl</option>
             <option value="Michael Jacjson">Michael Jackson</option>
         </select>
+        <!-- /ricerca album per artista -->
+
     </div>
     
     

@@ -56,12 +56,15 @@ export default {
     computed: {
         albumsFiltered() {
             return this.albums.filter((elm) => {
-                if
-                (elm.title.toLowerCase().includes(this.filterValue.toLowerCase()) 
-                || 
-                (elm.genre == this.filterValue)) {
+                if(elm.title.toLowerCase().includes(this.filterValue.toLowerCase())) {
                     return elm;
                 } 
+                if(elm.genre == this.filterValue) {
+                    return elm;
+                }
+                if(elm.author == this.filterValue) {
+                    return elm;
+                }
             });
         }
     }

@@ -6,7 +6,7 @@
             <button class="btn btn-warning ms-2" @click.prevent= "$emit('reset', searchText)" >Reset</button>
         </form>
 
-        <select v-model= "selectVal" class="mb-4" @change= "$emit ('search', selectVal)">
+        <select v-model= "genreValue" class="mb-4" @change= "$emit ('search', genreValue)">
             <option value="">Select genre</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
@@ -24,7 +24,7 @@ export default {
     data() {
         return {
             searchText: "",
-            selectVal: ""
+            genreValue: ""
         }
     }
 }

@@ -31,7 +31,7 @@ export default {
     data() {
         return {
             albums: null,
-            searchValue: "",
+            filterValue: "",
         }
     },
     created() {
@@ -47,19 +47,19 @@ export default {
     },
     methods: {
         searchAlbum(payload) {
-            this.searchValue = payload;
+            this.filterValue = payload;
         },
         resetAlbum() {
-            this.searchValue = "";
+            this.filterValue = "";
         }
     },
     computed: {
         albumsFiltered() {
             return this.albums.filter((elm) => {
                 if
-                (elm.title.toLowerCase().includes(this.searchValue.toLowerCase()) 
+                (elm.title.toLowerCase().includes(this.filterValue.toLowerCase()) 
                 || 
-                (elm.genre == this.searchValue)) {
+                (elm.genre == this.filterValue)) {
                     return elm;
                 } 
             });

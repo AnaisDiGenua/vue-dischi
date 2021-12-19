@@ -59,10 +59,10 @@ export default {
                 if(elm.title.toLowerCase().includes(this.filterValue.toLowerCase())) {
                     return elm;
                 } 
-                if(elm.genre == this.filterValue) {
+                else if(elm.genre == this.filterValue) {
                     return elm;
                 }
-                if(elm.author == this.filterValue) {
+                else if(elm.author == this.filterValue) {
                     return elm;
                 }
             });

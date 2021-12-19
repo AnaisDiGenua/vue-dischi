@@ -7,6 +7,7 @@
         </form>
 
         <select v-model= "selectVal" class="mb-4" @change= "$emit ('search', selectVal)">
+            <option value="">Select genre</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
             <option value="Jazz">Jazz</option>
@@ -22,7 +23,7 @@ export default {
     name: 'SearchBar',
     data() {
         return {
-            searchText: '',
+            searchText: "",
             selectVal: ""
         }
     }

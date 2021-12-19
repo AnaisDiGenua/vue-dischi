@@ -5,7 +5,7 @@
                 <SearchBar @search="searchAlbum" @reset="resetAlbum"/>
             </div>
         </div>
-        <div v-if="albums != null" class="row">
+        <div v-if="albums != null" class="row d-flex justify-content-center">
             <div v-for="album in albumsFiltered" :key="album.id">
                 <AlbumCard :info="album" />
             </div>
@@ -75,7 +75,7 @@ export default {
 
 .row {
     > *{
-        width: 100%;
+        width: 70%;
     }
 }
 

@@ -5,7 +5,7 @@
                 <SearchBar @search="searchAlbum" @reset="resetAlbum"/>
             </div>
         </div>
-        <div v-if="albums != null" class="row d-flex justify-content-center">
+        <div v-if="albums != null" class="row d-flex">
             <div v-for="album in albumsFiltered" :key="album.id">
                 <AlbumCard :info="album" />
             </div>
@@ -74,6 +74,7 @@ export default {
 <style lang="scss" scoped>
 
 .row {
+    justify-content: center;
     > *{
         width: 70%;
     }
@@ -84,6 +85,7 @@ export default {
 
 @media screen and (min-width: 576px) {
     .row {
+        justify-content: flex-start;
         > *{
             width: calc(100% / 2);
         }
